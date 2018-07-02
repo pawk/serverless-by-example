@@ -10,7 +10,7 @@ provider:
 
 functions:
   aws-based:
-    handler: aws-based.handler
+    handler: functions/basics/aws-based.handler
     events:
       - http:
           method: get
@@ -21,7 +21,7 @@ functions:
           path: aws-based/{proxy+}
           cors: true
   express-based:
-    handler: express-based.handler
+    handler: functions/basics/express-based.handler
     events:
       - http:
           method: get
@@ -34,4 +34,3 @@ functions:
 
 plugins:
   - serverless-offline
-  
