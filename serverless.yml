@@ -1,19 +1,37 @@
-# serverless.yml
-
-service: my-express-application
+service: serverless-examples
 
 provider:
   name: aws
   runtime: nodejs8.10
   stage: dev
   region: us-east-1
+  environment:
+    myCustomEnvVar: 7
 
 functions:
-  app:
-    handler: index.handler
+  aws-based:
+    handler: aws-based.handler
     events:
-      - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http:
+          method: get
+          path: aws-based
+          cors: true
+      - http:
+          method: get
+          path: aws-based/{proxy+}
+          cors: true
+  express-based:
+    handler: express-based.handler
+    events:
+      - http:
+          method: get
+          path: express-based
+          cors: true
+      - http:
+          method: get
+          path: express-based/{proxy+}
+          cors: true
 
 plugins:
   - serverless-offline
+  
