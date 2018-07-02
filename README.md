@@ -14,10 +14,5 @@ sls deploy
 
 ## Examples 
 
-### AWS-based handler
-
-See [aws-based.js](blob/master/aws-based.js)
-
-### Express-based handler
-
-See [express-based.js](blob/master/express-based.js)
+- [AWS sdk based handler](aws-based.js)
+- [Express sdk based handler](express-based.js)
