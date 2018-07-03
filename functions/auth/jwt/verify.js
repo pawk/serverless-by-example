@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const secret = process.env.JWT_SECRET;
 
 module.exports.handler = function(event, context, callback) {
-  const token = event.headers.Authorization.split(' ').pop()
+  const token = event.headers.Authorization && event.headers.Authorization.split(' ').pop()
   let payload, message, statusCode
 
   try {
