@@ -4,7 +4,7 @@ const { DB_URL, DB_NAME } = process.env
 const dbClient = new Promise((resolve, reject) => {
   MongoClient.connect(DB_URL, function(err, client) {
     if (err) {
-      reject(err)
+      reject(err.message + ' ' + DB_URL)
     }
     resolve(client)
   });
@@ -26,5 +26,5 @@ module.exports.handler = function(event, context, callback) {
       client.close()
     })
     .then(() => respond(200, 'Connected successfully to database server'))
-    .catch((e) => respond(500, e.message))
+    .catch((err) => respond(500, err))
 }

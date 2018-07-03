@@ -1,0 +1,20 @@
+service: serverless-by-example
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  environment:
+    DB_URL: ${env:DB_URL}
+
+functions:
+  mongo-connect:
+    handler: functions/db/mongo.handler
+    events:
+      - http:
+          method: get
+          path: db/mongo
+
+plugins:
+  - serverless-offline
