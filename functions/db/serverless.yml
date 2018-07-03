@@ -7,7 +7,7 @@ provider:
   region: us-east-1
 
 functions:
-  mong-connect:
+  mongo-connect:
     handler: mongo.handler
     events:
       - http:
