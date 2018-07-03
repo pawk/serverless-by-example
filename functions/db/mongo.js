@@ -13,7 +13,7 @@ const dbClient = new Promise((resolve, reject) => {
 module.exports.handler = function(event, context, callback) {
   function respond(code, message) {
     const body = JSON.stringify({ message })
-    const response = { statusCode, body }
+    const response = { code, body }
     callback(null, response)
   }
 
