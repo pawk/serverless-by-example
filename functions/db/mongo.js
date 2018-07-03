@@ -2,11 +2,11 @@ const MongoClient = require('mongodb').MongoClient
 const { DB_URL, DB_NAME } = process.env
 
 const dbClient = new Promise((resolve, reject) => {
-  MongoClient.connect(DB_URL, function(err, client) {
+  MongoClient.connect(DB_URL, function(err, db) {
     if (err) {
       reject(err.message)
     }
-    resolve(client)
+    resolve(db)
   });
 })
 
@@ -20,10 +20,9 @@ module.exports.handler = function(event, context, callback) {
   let statusCode
   let message
   dbClient
-    .then((client) => {
-      const db = client.db(DB_NAME)
+    .then((db) => {
       // operate on your db ...
-      client.close()
+      db.close()
     })
     .then(() => respond(200, 'Connected successfully to database server'))
     .catch((err) => respond(500, err))
