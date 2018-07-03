@@ -1,5 +1,13 @@
 # Serverless by example
 
+## Examples 
+
+- [Basics](functions/basics/)
+- [JSON Web Token](functions/auth/jwt/)
+- [MongoDB connection](functions/db/)
+
+## Execution 
+
 ### Dependencies 
 
 You will need to install some dependencies 
@@ -9,33 +17,34 @@ npm install -g serverless
 npm install
 ```
 
-### Execution
-
-To run/deploy examples, you have to go to particular directory and issue command from there. See appropriate README files.
-In general, you do it with two commands (possibly with some additional parameters).
-
-#### Offline - local serverless emulation
+### Run locally
 
 ```
 sls offline start 
 ```
 
-#### Deploy to platform
+### Deploy to cloud
 
-This command will deploy all functions defined in `serverless.yml`
+To run/deploy examples, you have to issue all the commands from repository's root directory.
+
+You can deploy all the functions defined in `serverless.yml` file by issuing 
 
 ```
 sls deploy
 ```
-To deploy single function one can go with 
+
+Recommended way of bulked deploy is to run 
 
 ```
-sls eploy --function <function-name>
+./deploy.sh
 ```
-This command is much faster as it does not update CloudFormation stack. This will not update lambda url.
+This will deploy all the functions with some predefined parameters (if required and applicable)
 
-## Examples 
+Alternatively you can deploy single function (without rebuilding CloudFormation stack, so this operation is much faster)
 
-- [Basics](functions/basics/)
-- [JSON Web Token](functions/auth/jwt/)
-- [MongoDB connection](functions/db/)
+```
+sls deploy --function <function-name>
+```
+
+This will not show you the endpoint though, as it will only update zipped code on the existing endpoint.
+Some additional paramters may be required.
