@@ -5,7 +5,7 @@ To make this work one has to deploy functions with `--jwt-secret` cli parameter,
 ```
 sls offline --jwt-secret abcd start
 # or 
-sls  --jwt-secret abcd deploy
+sls --jwt-secret abcd deploy
 ```
 
 Two endpoints available - for token generation (`/auth/jwt/generate`) and verification (`/auth/jwt/verify`).
