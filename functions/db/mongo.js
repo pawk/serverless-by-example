@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient
-const { DB_URL, DB_NAME } = process.env
+const { DB_URL } = process.env
 
 const dbClient = new Promise((resolve, reject) => {
   MongoClient.connect(DB_URL, function(err, db) {
