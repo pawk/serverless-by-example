@@ -22,9 +22,17 @@ sls offline start
 
 #### Deploy to platform
 
+This command will deploy all functions defined in `serverless.yml`
+
 ```
 sls deploy
 ```
+To deploy single function one can go with 
+
+```
+sls eploy --function <function-name>
+```
+This command is much faster as it does not update CloudFormation stack. This will not update lambda url.
 
 ## Examples 
 

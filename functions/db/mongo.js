@@ -4,7 +4,7 @@ const { DB_URL, DB_NAME } = process.env
 const dbClient = new Promise((resolve, reject) => {
   MongoClient.connect(DB_URL, function(err, client) {
     if (err) {
-      reject(err.message + ' ' + DB_URL)
+      reject(err.message)
     }
     resolve(client)
   });

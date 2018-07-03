@@ -9,6 +9,34 @@ provider:
     DB_URL: ${env:DB_URL}
 
 functions:
+  basics-aws-based:
+    handler: functions/basics/aws-based.handler
+    events:
+      - http:
+          method: get
+          path: basics/aws-based
+
+  basics-express-based:
+    handler: functions/basics/express-based.handler
+    events:
+      - http:
+          method: get
+          path: basics/express-based
+
+  auth-jwt-generate:
+    handler: functions/auth/jwt/generate.handler
+    events:
+      - http:
+          method: post
+          path: auth/jwt/generate
+
+  auth-jwt-verify:
+    handler: functions/auth/jwt/verify.handler
+    events:
+      - http:
+          method: get
+          path: auth/jwt/verify
+
   mongo-connect:
     handler: functions/db/mongo.handler
     events:
