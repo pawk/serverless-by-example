@@ -37,7 +37,7 @@ functions:
           method: get
           path: auth/jwt/verify
 
-  mongo-connect:
+  db-mongo:
     handler: functions/db/mongo.handler
     events:
       - http:

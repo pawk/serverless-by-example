@@ -2,6 +2,8 @@
 
 ### Mongo DB
 
+> Issue commands from repository's root directory
+
 One must provide `DB_URL` env var in form of 
 
 ```
@@ -14,4 +16,10 @@ Then run script with
 sls offline start
 # or 
 sls deploy
+```
+
+To deploy single function 
+
+```
+sls deploy --function db-mongo
 ```

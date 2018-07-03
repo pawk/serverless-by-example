@@ -4,13 +4,23 @@ Here you can find two examples of simple lambda implementation, both uses differ
 
 Both will return data related to user's request.
 
-### Run
+### Deploy
+
+> Issue commands from repository's root directory
 
 ```
 sls offline start
 # or
 sls deploy
 ```
+
+To deploy basic examples
+
+```
+git deploy --function basic-aws-based
+git deploy --function basic-express-based
+```
+
 
 ### AWS based 
 
