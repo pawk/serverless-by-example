@@ -17,8 +17,8 @@ sls deploy
 To deploy basic examples
 
 ```
-git deploy --function basic-aws-based
-git deploy --function basic-express-based
+sls deploy --function basic-aws-based
+sls deploy --function basic-express-based
 ```
 
 

@@ -1,5 +1,7 @@
 # JSON Web Token 
 
+Two endpoints available - for token generation and verification.
+
 ### Deploy
 
 > Issue commands from repository's root directory
@@ -7,9 +9,9 @@
 To make this work one has to deploy functions with `--jwt-secret` cli parameter, like
 
 ```
-sls offline --jwt-secret abcd start
+sls offline start --jwt-secret abcd
 # or 
-sls --jwt-secret abcd deploy
+sls deploy --jwt-secret abcd
 ```
 
 To deploy only jwt-related functions
@@ -18,8 +20,6 @@ To deploy only jwt-related functions
 sls deploy --jwt-secret abcd --function auth-jwt-generate
 sls deploy --jwt-secret abcd --function auth-jwt-verify
 ```
-
-Two endpoints available - for token generation (`/auth/jwt/generate`) and verification (`/auth/jwt/verify`).
 
 ### Generate 
  
