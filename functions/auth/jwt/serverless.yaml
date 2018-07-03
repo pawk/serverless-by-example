@@ -1,0 +1,27 @@
+service: serverless-examples
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  environment:
+    JWT_SECRET: ${opt:jwt-secret}
+
+functions:
+  auth-jwt-generate:
+    handler: generate.handler
+    events:
+      - http:
+          method: post
+          path: auth/jwt/generate
+
+  auth-jwt-verify:
+    handler: verify.handler
+    events:
+      - http:
+          method: get
+          path: auth/jwt/verify
+
+plugins:
+  - serverless-offline
