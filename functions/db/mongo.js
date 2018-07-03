@@ -17,8 +17,6 @@ module.exports.handler = function(event, context, callback) {
     callback(null, response)
   }
 
-  let statusCode
-  let message
   dbClient
     .then((db) => {
       // operate on your db ...
