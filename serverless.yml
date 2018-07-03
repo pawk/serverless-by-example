@@ -6,7 +6,7 @@ provider:
   stage: dev
   region: us-east-1
   environment:
-    myCustomEnvVar: 7
+    JWT_SECRET: ${opt:jwt-secret}
 
 functions:
   aws-based:
@@ -20,6 +20,7 @@ functions:
           method: get
           path: aws-based/{proxy+}
           cors: true
+
   express-based:
     handler: functions/basics/express-based.handler
     events:
@@ -31,6 +32,20 @@ functions:
           method: get
           path: express-based/{proxy+}
           cors: true
+
+  auth-jwt-generate:
+    handler: functions/auth/jwt/generate.handler
+    events:
+      - http:
+          method: post
+          path: auth/jwt/generate
+
+  auth-jwt-verify:
+    handler: functions/auth/jwt/verify.handler
+    events:
+      - http:
+          method: get
+          path: auth/jwt/verify
 
 plugins:
   - serverless-offline
