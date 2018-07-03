@@ -4,6 +4,14 @@ Here you can find two examples of simple lambda implementation, both uses differ
 
 Both will return data related to user's request.
 
+### Run
+
+```
+sls offline start
+# or
+sls deploy
+```
+
 ### AWS based 
 
 ```

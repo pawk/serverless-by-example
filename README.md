@@ -1,16 +1,6 @@
 # Serverless by example
 
-## Run offline
-
-```
-sls offline start
-```
-
-## Deploy
-
-```
-sls deploy
-```
+To run/deploy examples, you have to go to particular directory and issue command from there. See appropriate README files.
 
 ## Examples 
 
