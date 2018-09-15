@@ -5,6 +5,7 @@
 - [Basics](functions/basics/)
 - [JSON Web Token](functions/auth/jwt/)
 - [MongoDB connection](functions/db/)
+- [GraphQL Apollo server](functions/graphql/)
 
 ## Execution 
 
