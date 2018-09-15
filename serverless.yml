@@ -44,6 +44,12 @@ functions:
       - http:
           method: get
           path: db/mongo
+  graphql:
+    handler: functions/graphql/apollo-server.handler
+    events:
+      - http:
+          method: ANY
+          path: graphql
 
 plugins:
   - serverless-offline
