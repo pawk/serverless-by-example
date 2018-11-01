@@ -2,5 +2,4 @@
 set -x
 
 sls deploy \
-  --jwt-secret abcd
-  
+  --jwt-secret abcd $@
