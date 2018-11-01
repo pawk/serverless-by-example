@@ -38,12 +38,20 @@ functions:
           method: get
           path: auth/jwt/verify
 
+  auth:
+    handler: functions/auth/index.handler
+    events:
+      - http:
+          method: get
+          path: auth
+
   db-mongo:
     handler: functions/db/mongo.handler
     events:
       - http:
           method: get
           path: db/mongo
+
   graphql:
     handler: functions/graphql/apollo-server.handler
     events:
